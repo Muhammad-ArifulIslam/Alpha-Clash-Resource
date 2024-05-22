@@ -30,7 +30,7 @@
 
         <!-- playground start -->
 
-        <section id = "play-ground" class="hidden">
+        <section id = "play-ground"  class="hidden">
 
             <div class = "flex flex-col items-center gap-20 pt-20">
                 <!-- screen -->
@@ -87,7 +87,7 @@
                     <button class="btn bg-[#894189] rounded-full border-none text-xl font-medium	text-white">
                         Life
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
-                        <span id = "current-life">5</span>
+                        <span id = "current-life">3</span>
                         
                     </button>
 
@@ -106,14 +106,15 @@
 
         <!-- playground end -->
 
-        <section class="score flex justify-center items-center min-h-screen hidden">
+        <section id = "final-score" class="flex justify-center items-center min-h-screen hidden">
 
-            <div class = "text-white text-center space-y-4 bg-[#FFFFFF33] p-10 rounded-2xl	">
+            <div class = "text-white text-center space-y-4 bg-[#FFFFFF33] p-10 rounded-2xl">
+                <h4 class = "text-3xl">Game Over!</h4>
                 <h1 class = "text-8xl">
                     <span class = "font-extrabold">Score :</span>
-                    <span>14</span>
+                    <span id = 'last-score'>14</span>
                 </h1>
-                <button class = "btn text-2xl font-semibold">Play Again</button>
+                <button onclick = "play()" class = "btn text-2xl font-semibold">Play Again</button>
                 <p>Practice will make you Pro</p>
             </div>
 

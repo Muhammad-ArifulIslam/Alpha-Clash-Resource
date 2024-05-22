@@ -18,6 +18,12 @@
 document.addEventListener('keyup', function handleKeyboardButtonPress(event){
 
     const playerPressed = event.key;
+    
+    if(playerPressed === 'Escape'){
+
+        gameOver();
+    }
+
     const currentAlphabetElement = document.getElementById("current-alphabet");
     const currentAlphabet = currentAlphabetElement.innerText;
     const expectedAlphabet = currentAlphabet.toLowerCase();
@@ -65,7 +71,12 @@ document.addEventListener('keyup', function handleKeyboardButtonPress(event){
 
         currentLifeElement.innerText = newLife;
 
-    }
+    if(newLife === 0){
+
+        gameOver();
+    }    
+
+}
 
 });
 
@@ -87,7 +98,33 @@ function continueGame (){
 function play(){
 
     hideElementById('home-screen');
+    hideElementById('final-score');
     showElementById('play-ground');
+    setTextElementValueById('current-life', 3);
+    setTextElementValueById('current-score', 0);
     continueGame();
 
 }
+
+
+function gameOver(){
+
+    hideElementById('play-ground');
+    showElementById('final-score');
+
+                    //<!--- get the final score --->
+    
+    const lastScore = getTextElementValueById('current-score');
+    console.log(lastScore);
+    setTextElementValueById('last-score', lastScore);
+    
+                    //<!--- clear the last selected alphabet highlight--->
+
+    const currentAlphabet = getElementTextById ('current-alphabet');
+    // console.log(currentAlphabet);
+    removeBackgroundColorById(currentAlphabet);
+
+}
+
+
+
